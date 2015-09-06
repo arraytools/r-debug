@@ -1,0 +1,293 @@
+C:\Users\brb\Downloads\R-3.2.2\src\gnuwin32>gdb ..\..\bin\i386\Rgui
+GNU gdb (GDB) 7.3.50.20111208-cvs
+Copyright (C) 2011 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-w64-mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\brb\Downloads\R-3.2.2\src\gnuwin32/..\..\bin\i386\
+Rgui.exe...done.
+(gdb) run
+Starting program: C:\Users\brb\Downloads\R-3.2.2\src\gnuwin32/..\..\bin\i386\Rgu
+i.exe
+[New Thread 956.0x5e0]
+warning: Could not load shared library symbols for 23 libraries, e.g. C:\Windows
+\system32\ntdll.dll.
+Use the "info sharedlibrary" command to see the complete listing.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Windows\system32\uxtheme.d
+ll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Windows\system32\ole32.dll
+.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Windows\system32\oleaut32.
+dll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Invalid parameter passed to C runtime function.
+
+warning: Could not load shared library symbols for C:\Windows\system32\cryptbase
+.dll.
+Do you need "set solib-search-path" or "set sysroot"?
+[New Thread 956.0xe80]
+warning: Could not load shared library symbols for C:\Windows\system32\setupapi.
+dll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Windows\system32\cfgmgr32.
+dll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Windows\system32\devobj.dl
+l.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Windows\system32\clbcatq.d
+ll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Windows\system32\propsys.d
+ll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Windows\system32\ntmarta.d
+ll.
+Do you need "set solib-search-path" or "set sysroot"?
+[New Thread 956.0x710]
+warning: Could not load shared library symbols for C:\Windows\system32\Wldap32.d
+ll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Windows\system32\dwmapi.dl
+l.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Users\brb\Downloads\R-3.2.
+2\library\utils\libs\i386\utils.dll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Users\brb\Downloads\R-3.2.
+2\library\methods\libs\i386\methods.dll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Users\brb\Downloads\R-3.2.
+2\library\grDevices\libs\i386\grDevices.dll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Users\brb\Downloads\R-3.2.
+2\library\graphics\libs\i386\graphics.dll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Users\brb\Downloads\R-3.2.
+2\library\stats\libs\i386\stats.dll.
+Do you need "set solib-search-path" or "set sysroot"?
+warning: Could not load shared library symbols for C:\Users\brb\Downloads\R-3.2.
+2\bin\i386\Rlapack.dll.
+Do you need "set solib-search-path" or "set sysroot"?
+
+Program received signal SIGTRAP, Trace/breakpoint trap.
+0x6c718581 in ?? ()
+(gdb) b corcov
+Function "corcov" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) y
+
+Breakpoint 1 (corcov) pending.
+(gdb) next
+Cannot find bounds of current function
+(gdb) next
+Cannot find bounds of current function
+(gdb) continue
+Continuing.
+[Inferior 1 (process 956) exited normally]
+(gdb)
+=============================================================================================
+(gdb) directory ../library/stats/src
+Source directories searched: C:\Users\brb\Downloads\R-3.2.2\src\gnuwin32/../libr
+ary/stats/src;C:\Users\brb\Downloads\R-3.2.2\src\gnuwin32/graphapp;C:\Users\brb\
+Downloads\R-3.2.2\src\gnuwin32/../extra;C:\Users\brb\Downloads\R-3.2.2\src\gnuwi
+n32/../appl;C:\Users\brb\Downloads\R-3.2.2\src\gnuwin32/../nmath;C:\Users\brb\Do
+wnloads\R-3.2.2\src\gnuwin32/../main;$cdir;$cwd
+(gdb) run
+Starting program: C:\Users\brb\Downloads\R-3.2.2\src\gnuwin32/..\..\bin\i386\Rgu
+i.exe
+[New Thread 1220.0xe8c]
+warning: Could not load shared library symbols for 23 libraries, e.g. C:\Windows
+\system32\ntdll.dll.
+=========================================================================================
+
+directory ../main
+directory ../nmath
+directory ../appl
+directory ../extra
+directory ../library/stats/src
+=========================================================================================
+* It seems using the 'directory' command to include the source directories in gdb ()http://www.stats.uwo.ca/faculty/murdoch/software/debuggingR/gdb.shtml) does not work.
+* The way I used to include source directory is coming from http://visualgdb.com/gdbreference/commands/set_solib-search-path 
+* No need to run set disass intel
+* No need to run set env TMP c:/tmp
+* I am running gdb under Command Prompt
+* I don't use insight
+
+C:\Users\brb\Downloads\R-3.2.2\src\gnuwin32>c:\Users\brb\Documents\Rcommand.bat
+C:\Users\brb\Downloads\R-3.2.2\src\gnuwin32>gdb ..\..\bin\i386\Rgui
+run
+# In Rgui. 
+# Run debug(cor); cor(1:5, rnorm(5))
+# Press Enter 14 times until we see .Call(C_cor, x, y, na.method, FALSE)
+# Misc -> Turn off Buffer output, Misc->Break to debugger
+info sharedlibrary
+set solib-search-path C:/Users/brb/Downloads/R-3.2.2/src/library/stats/src
+info sharedlibrary # Make sure Syms column is Yes on the desired library (dll)
+b corcov
+info break
+n
+n
+finish
+n
+n
+# Type s in R
+n
+l
+n
+u 745
+n
+n
+[press ENTER or 'n' or 'finish' and 'c' till done]
+===========================================================
+
+# Rgui
+debug(download.file)
+url <- paste0("ftp://ftp.ncbi.nlm.nih.gov/genomes/ASSEMBLY_REPORTS/All/",
+              "GCF_000001405.13.assembly.txt")
+f1 <- tempfile()
+download.file(url, f1)
+# Press 9 times of ENTER key before click Break to debugger
+
+set solib-search-path C:/Users/brb/Downloads/R-3.2.2/src/library/stats/src
+b download
+b url_open
+n
+n
+# Rgui
+# s
+n
+n
+# internet.c
+# Code broke at line 479 of in_do_download () function
+
+457         sfile = CAR(args); args = CDR(args);
+(gdb)
+458         if(!isString(sfile) || length(sfile) < 1)
+(gdb)
+460         if(length(sfile) > 1)
+(gdb) backtrace
+#0  in_do_download (args=0x5883830) at internet.c:460
+#1  0x6c7ebd7c in do_External (call=0x5e5008c, op=0x227fcb0, args=0x5883884,
+    env=0x5882b30) at dotcode.c:548
+#2  0x6c78235a in Rf_eval (e=0x5e5008c, rho=<optimized out>) at eval.c:655
+#3  0x6c78494d in Rf_eval (rho=0x5882b30, e=0x5e5008c) at eval.c:517
+#4  do_set (call=0x5e50118, op=0x2273580, args=0x5e500fc, rho=0x5882b30)
+    at eval.c:2105
+#5  0x6c782113 in Rf_eval (e=0x5e50118, rho=<optimized out>) at eval.c:627
+#6  0x6c782e73 in Rf_eval (rho=0x5882b30, e=<optimized out>) at eval.c:517
+#7  do_begin (call=0x5e50150, op=0x2273484, args=0x5e50134, rho=0x5882b30)
+    at eval.c:1716
+#8  0x6c782113 in Rf_eval (e=0x5e50150, rho=<optimized out>) at eval.c:627
+#9  0x6c82a0c3 in do_switch (call=0x5e4eacc, op=0x2274c9c, args=0x5e4eab0,
+    rho=0x5882b30) at builtin.c:1059
+#10 0x6c782113 in Rf_eval (e=0x5e4eacc, rho=<optimized out>) at eval.c:627
+#11 0x6c782e73 in Rf_eval (rho=0x5882b30, e=<optimized out>) at eval.c:517
+#12 do_begin (call=0x5e4e6b4, op=0x2273484, args=0x5e4eae8, rho=0x5882b30)
+    at eval.c:1716
+#13 0x6c782113 in Rf_eval (e=0x5e4e6b4, rho=<optimized out>) at eval.c:627
+#14 0x6c786589 in Rf_eval (rho=0x5882b30, e=0x5e4e6b4) at eval.c:517
+#15 Rf_applyClosure (call=0x5882cf0, op=0x5e4e9e0, arglist=0x5882c48,
+    rho=0x228bee8, suppliedvars=0x22724a0) at eval.c:1039
+#16 0x6c781ebc in Rf_eval (e=0x5882cf0, rho=0x228bee8) at eval.c:674
+#17 0x6c74c163 in Rf_ReplIteration (rho=0x228bee8, savestack=0,
+    browselevel=0, state=0x142edfc) at main.c:258
+#18 0x6c74c4cd in R_ReplConsole (rho=<optimized out>, savestack=0,
+    browselevel=0) at main.c:308
+#19 0x0142fe48 in ?? ()
+Backtrace stopped: previous frame inner to this frame (corrupt stack?)
+(gdb) n
+462         file = translateChar(STRING_ELT(sfile, 0));
+(gdb)
+463         IDquiet = quiet = asLogical(CAR(args)); args = CDR(args);
+(gdb)
+464         if(quiet == NA_LOGICAL)
+(gdb)
+463         IDquiet = quiet = asLogical(CAR(args)); args = CDR(args);
+(gdb)
+464         if(quiet == NA_LOGICAL)
+(gdb)
+466         smode =  CAR(args); args = CDR(args);
+(gdb)
+467         if(!isString(smode) || length(smode) != 1)
+(gdb)
+470         cacheOK = asLogical(CAR(args));
+(gdb)
+469         mode = CHAR(STRING_ELT(smode, 0));
+(gdb)
+470         cacheOK = asLogical(CAR(args));
+(gdb)
+471         if(cacheOK == NA_LOGICAL)
+(gdb)
+470         cacheOK = asLogical(CAR(args));
+(gdb)
+471         if(cacheOK == NA_LOGICAL)
+(gdb)
+474         int meth = asLogical(CADR(args));
+(gdb)
+475         if(meth == NA_LOGICAL)
+(gdb)
+474         int meth = asLogical(CADR(args));
+(gdb)
+475         if(meth == NA_LOGICAL)
+(gdb)
+477         if(meth == 0) meth = UseInternet2;
+(gdb)
+478         if (R_Interactive && !quiet && !pbar.wprog) {
+(gdb)
+456         url = CHAR(STRING_ELT(scmd, 0));
+(gdb)
+469         mode = CHAR(STRING_ELT(smode, 0));
+(gdb)
+487         if(strncmp(url, "file://", 7) == 0) {
+(gdb)
+469         mode = CHAR(STRING_ELT(smode, 0));
+(gdb)
+487         if(strncmp(url, "file://", 7) == 0) {
+(gdb)
+456         url = CHAR(STRING_ELT(scmd, 0));
+(gdb)
+487         if(strncmp(url, "file://", 7) == 0) {
+(gdb)
+518         } else if (strncmp(url, "http://", 7) == 0
+(gdb)
+520                    || ((strncmp(url, "https://", 8) == 0) && meth)
+(gdb)
+647         } else if (strncmp(url, "ftp://", 6) == 0) {
+(gdb)
+659             out = R_fopen(R_ExpandFileName(file), mode);
+(gdb)
+660             if(!out) {
+(gdb)
+659             out = R_fopen(R_ExpandFileName(file), mode);
+(gdb)
+660             if(!out) {
+(gdb)
+665             R_Busy(1);
+(gdb)
+666             if(!quiet) REprintf(_("trying URL '%s'\n"), url);
+(gdb)
+668             R_FlushConsole();
+(gdb)
+670             ctxt = Ri_FTPOpen(url);
+(gdb)
+[New Thread 2088.0x7c8]
+671             if(ctxt == NULL) status = 1;
+(gdb)
+754             R_Busy(0);
+(gdb)
+755             fclose(out);
+(gdb)
+756             if (status == 1) error(_("cannot open URL '%s'"), url);
+(gdb)
+[New Thread 2088.0xb10]
+[New Thread 2088.0x770]
+[Inferior 1 (process 2088) exited normally]
+(gdb)
+
